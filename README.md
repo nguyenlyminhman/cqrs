@@ -1,8 +1,32 @@
-# Prisma ORM
+# CQRS
 ## Description
 
 CQRS (Command Query Responsibility Segregation) is a software architectural pattern that separates the concerns of reading data (queries) from modifying data (commands) in an application. It promotes a clear separation between the models and mechanisms used for reading data and those used for writing data.
 
+## System Process
+```
+BackEnd --> Command: CreateOrderNeko
+         |
+         v
+     CreateOrderNekoCommand
+         |
+         +--> Command: updateNekoStock
+         +--> Command: pushOrderNekoToCashier
+         +--> Command: sendMailToCustomer
+```
+
+Result
+```
+Creating order...
+Order created.
+Begin pushing to: OrderNekoCreatedEvent
+Mail: sending in 3s
+Stock: updating in 2s
+Cashier: updating in 4s
+Stock: updated in 2s
+Mail: sent in 3s
+Cashier: updated in 4s
+```
 
 ## Installation
 
