@@ -11,7 +11,7 @@ import {
 import { OrderService } from './order.service';
 import { Order as OrderModel } from '@prisma/client';
 import { ApiFoundResponse, ApiTags } from '@nestjs/swagger';
-import { OrderEntity } from './entity/order.entity';
+import { OrderEntity } from '../../entities/order.entity';
 import { CreateOrderDto } from './dtos/create-order.dto';
 import { UpdateOrderStatusDto } from './dtos/update-order-status.dto';
 
